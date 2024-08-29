@@ -1,0 +1,13 @@
+.card{
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 3px 0.5px;
+}
+.main-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
