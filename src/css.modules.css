@@ -6,6 +6,7 @@
 .right{
     display: inline-block;
     vertical-align: top;
+    text-align: center;
 }
 .card1{
     width: 300px;
