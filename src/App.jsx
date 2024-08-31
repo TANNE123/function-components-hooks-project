@@ -1,15 +1,12 @@
-import CardTodo from "./components/todo-card/card"
-import ButtonEvenOdd from "./components/todo-list/button-task"
-import LogoComponent from "./logo-components"
+import SamsungComponent from "./components/samsung-validation/samsung"
+
 
 
 const App=()=>{
   return(
     <>
-   <CardTodo/>
-    <ButtonEvenOdd/>
-   <LogoComponent/>
 
+    <SamsungComponent/>
 
     </>
   )
