@@ -1,15 +1,11 @@
-import SamsungComponent from "./components/samsung-validation/samsung"
+import MyComponent from "./components/Countrystates/country";
 
-
-
-const App=()=>{
-  return(
+const App = () => {
+  return (
     <>
-
-    <SamsungComponent/>
-
+      <MyComponent />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
