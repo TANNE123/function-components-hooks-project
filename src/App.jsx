@@ -1,13 +1,11 @@
-import ButtonApiData from "./components/useEffectt/buttonApiData";
-import ChangePage from "./components/useEffectt/changePage";
+import NavigationComponent from "./components/navbarComponents/NavigationComponent";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
-    <>
-    <ChangePage/>
-    <ButtonApiData/>
-    
-    </>
+    <div>
+      <NavigationComponent />
+    </div>
   );
 };
 
