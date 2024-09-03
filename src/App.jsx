@@ -1,9 +1,12 @@
-import MyComponent from "./components/Countrystates/country";
+import ButtonApiData from "./components/useEffectt/buttonApiData";
+import ChangePage from "./components/useEffectt/changePage";
 
 const App = () => {
   return (
     <>
-      <MyComponent />
+    <ChangePage/>
+    <ButtonApiData/>
+    
     </>
   );
 };
