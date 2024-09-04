@@ -1,12 +1,16 @@
-import NavigationComponent from "./components/navbarComponents/NavigationComponent";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import NavBarComponents from './components/04-09-24tasks/NavBarCompomponents';
+import NavigationComponents from './components/04-09-24tasks/NavigationComponents';
+
 const App = () => {
   return (
     <div>
-      <NavigationComponent />
+      <NavigationComponents/>
+   
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
