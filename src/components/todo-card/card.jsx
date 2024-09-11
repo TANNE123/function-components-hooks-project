@@ -32,12 +32,12 @@ const CardTodo = ()=>{
     return(
       <>
       <button onClick={AddHandler}>Add Card</button>
-      <div className='main-card'>
+      <div className='main-card' >
       {
         data.map(eachItem=>{
             const {id,role,name}=eachItem
             return(
-                < div className="card" key={id}>
+                < div className="card"  key={id}>
                 <h1 >{name}</h1>
                 <h2>{role}</h2>
                 <button onClick={()=>RemoveHandler(id)}>Remove</button>
@@ -51,4 +51,4 @@ const CardTodo = ()=>{
       </>
     )
 }
-export default CardTodo
+export default CardTodo;

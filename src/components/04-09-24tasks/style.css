@@ -1,0 +1,31 @@
+.navBar {
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.active {
+  font-size: 30px;
+  color: red;
+  padding: 20px;
+}
+.child-div {
+  text-align: center;
+  width: 350px;
+  height: 700px;
+  box-shadow: 0 0 2px 1px;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 55px 15px 0 0;
+  padding: 15px;
+}
+.child {
+  text-align: center;
+}
+.category {
+  margin: 50px 10px;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 2px 1px;
+  padding: 2px;
+}
