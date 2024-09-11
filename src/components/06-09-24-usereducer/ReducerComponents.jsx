@@ -1,4 +1,4 @@
-import React, { Fragment, useReducer, useState } from "react";
+import React, { useReducer, useState } from "react";
 
 import "./style.css";
 
@@ -15,6 +15,15 @@ const reducer = (state, action) => {
           ? action.payload
           : [...state.todo, action.payload],
       };
+    case "UPDATE":
+      return {
+        ...state,
+        todo: state.todo.map((todo, index) =>
+          index === action.payload.index ? action.payload.value : todo
+        ),
+      };
+    default:
+      return state;
   }
 };
 
@@ -28,11 +37,11 @@ const ReducerComponents = () => {
 
   const [name, setName] = useState("");
   const [todoList, setTodoList] = useState("");
-
-  const [currentState, despatch] = useReducer(reducer, initialState);
+  const [updateIndex, setUpdateIndex] = useState(null);
+  const [currentState, dispatch] = useReducer(reducer, initialState);
 
   const ageHandler = () => {
-    despatch({
+    dispatch({
       type: "Age",
       payload: 2,
     });
@@ -44,20 +53,23 @@ const ReducerComponents = () => {
 
   const submitHandler = () => {
     if (name) {
-      despatch({
+      dispatch({
         type: "change_name",
         payload: name,
       });
     }
   };
 
+
+
+  //below code.....
   const todoHandler = (event) => {
     setTodoList(event.target.value);
   };
 
   const addHandler = () => {
     if (todoList) {
-      despatch({
+      dispatch({
         type: "Add_Todo",
         payload: todoList,
       });
@@ -68,7 +80,7 @@ const ReducerComponents = () => {
   const deleteHandler = (targetId) => {
     const filterData = currentState.todo.filter((_, id) => id !== targetId);
 
-    despatch({
+    dispatch({
       type: "Add_Todo",
       payload: filterData,
     });
@@ -76,27 +88,32 @@ const ReducerComponents = () => {
 
   const updateHandler = (targetEach, targetIndex) => {
     setTodoList(targetEach);
-    const updateValue = currentState.todo.map((updateData, i) =>
-      i === targetIndex ? todoList : updateData
-    );
+    setUpdateIndex(targetIndex);
+  };
 
-    despatch({
-      type: "Add_Todo",
-      payload: updateValue,
-    });
+  const updateSubmitHandler = () => {
+    if (updateIndex !== null && todoList) {
+      dispatch({
+        type: "UPDATE",
+        payload: { index: updateIndex, value: todoList },
+      });
+      setTodoList("");
+      setUpdateIndex(null);
+    }
   };
 
   return (
     <>
       <input type="text" value={name} onChange={inputHandler} />
-      <button onClick={submitHandler}>submit</button>
+      <button onClick={submitHandler}>Submit</button>
       <h2>{currentState.username}</h2>
       <h1>{currentState.age}</h1>
       <button onClick={ageHandler}>Increment Age</button>
       <hr />
-
+        <h1>Todo Table</h1>
       <input type="text" value={todoList} onChange={todoHandler} />
       <button onClick={addHandler}>Add Todo</button>
+      <button onClick={updateSubmitHandler}>Update Submit</button>
       <table>
         <tbody>
           {currentState.todo.map((each, index) => (
