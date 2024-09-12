@@ -1,15 +1,22 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
-import ReducerComponents from './components/06-09-24-usereducer/ReducerComponents';
-// import NavBarComponents from './components/04-09-24tasks/NavBarCompomponents';
-// import NavigationComponents from './components/04-09-24tasks/NavigationComponents';
+import UiComponents from './components/11-09-24tasks/UiComponents';
+import LocalStorageComponents from './components/11-09-24tasks/LocalStorageComponents';
+import NetWorkComponent from './components/11-09-24tasks/NetWorkComponent';
+import LatLogComponent from './components/11-09-24tasks/LatLogComponent';
 
 const App = () => {
   return (
     <div>
-<ReducerComponents/>
-   
+
+   <UiComponents/>
+   <hr />
+   <LocalStorageComponents/>
+   <hr />
+   <NetWorkComponent/>
+    <hr />
+   <LatLogComponent/>
     </div>
   )
 }
