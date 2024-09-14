@@ -1,24 +1,31 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { createContext, useState } from "react";
+import TableComponent from "./components/13-09-24task4/FormTableComponent";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UpdateComponent from "./components/13-09-24task4/UpdateComponent";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react'
-import UiComponents from './components/11-09-24tasks/UiComponents';
-import LocalStorageComponents from './components/11-09-24tasks/LocalStorageComponents';
-import NetWorkComponent from './components/11-09-24tasks/NetWorkComponent';
-import LatLogComponent from './components/11-09-24tasks/LatLogComponent';
-
+export const Details=createContext()
 const App = () => {
+  const [update,setUpdate]=useState([])
+
   return (
-    <div>
+    <>
+    <TableComponent />
+    </>
 
-   <UiComponents/>
-   <hr />
-   <LocalStorageComponents/>
-   <hr />
-   <NetWorkComponent/>
-    <hr />
-   <LatLogComponent/>
-    </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+
+
+
+
+    // <Details.Provider value={[update,setUpdate]}>
+      
+      {/* <BrowserRouter>
+      <Routes>
+        <Route path="/:index" element={<UpdateComponent/>}/>
+      </Routes>
+      </BrowserRouter> */}
+    // </Details.Provider>
