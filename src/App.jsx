@@ -1,31 +1,24 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { createContext, useState } from "react";
-import TableComponent from "./components/13-09-24task4/FormTableComponent";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UpdateComponent from "./components/13-09-24task4/UpdateComponent";
+import React from 'react'
+import NavBarComponents from './components/14-9-24task/navComponents/NavBarComponents'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import RecipesComponent from './components/14-9-24task/screensComponents/RecipesComponent'
+import MainComponent from './components/14-9-24task/screensComponents/MainComponent'
 
-export const Details=createContext()
 const App = () => {
-  const [update,setUpdate]=useState([])
-
   return (
-    <>
-    <TableComponent />
-    </>
+   <>
+   <NavBarComponents/>
 
-  );
-};
+<BrowserRouter>
 
-export default App;
+<Routes>
+<Route path='/' element={<RecipesComponent/>}/>
+<Route path='/main' element={<MainComponent/>}/>
+</Routes>
+</BrowserRouter>
 
+   </>
+  )
+}
 
-
-
-    // <Details.Provider value={[update,setUpdate]}>
-      
-      {/* <BrowserRouter>
-      <Routes>
-        <Route path="/:index" element={<UpdateComponent/>}/>
-      </Routes>
-      </BrowserRouter> */}
-    // </Details.Provider>
+export default App
